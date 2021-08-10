@@ -8,7 +8,7 @@ class Account(models.Model):
     # Last Name on the account
     last_name = models.CharField(max_length=50)
     # Starting Balance of the Class in hours
-    starting_balance = models.DecimalField(max_digits=15, decimal_places=2)
+    initial_balance = models.DecimalField(max_digits=15, decimal_places=2)
     # Add the models manager
     Accounts = models.Manager()
 
@@ -17,8 +17,8 @@ class Account(models.Model):
         return '{} {}'.format(self.first_name, self.last_name)
 
 TransactionTypes = {
-    ('deposit', 'deposit'),
-    ('withdrawal', 'withdrawal'),
+    ('Deposit', 'Deposit'),
+    ('Withdrawal', 'Withdrawal'),
 }
 
 class Transaction(models.Model):
